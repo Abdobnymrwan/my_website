@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Ubuntu', sans-serif;
+    height: 100%;
+    background: #2a2b32;
+}
+
+a{
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover{
+    color: #e91e63;
+}
+
+h1.header{
+    color: #e91e63;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+h2{
+    color: #616161;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+canvas{
+    height: 100vh;
+    z-index: -100000;
+    position: fixed;
+    top: 0px;
+}
+
+.mb{
+    margin-bottom: 3rem;
+}
+
+.logo{
+    font-family: 'Monoton', cursive;
+    color: #fff;
+    font-size: 10rem;
+}
+
+.links-list ul li{
+    list-style: none;
+    margin-right: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: 0;
+}
+
+.links-list h1{
+    color: #fff;
+    font-size: 2.5rem;
+}
+
+.links-list ul li span{
+    background-color: #e91e63;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    padding: 3px 6px;
+    font-weight: bold;
+    margin-left: 0.5rem;
+    color: #fff;
+}
+
+.footer{
+    margin-top: 6rem;
+}
+
+.footer p{
+    color: #fff;
+    font-size: 1.3rem;
+}
+</style>
+    <title>Day #45 - Particles Portfolio | AsmrProg</title>
+</head>
+
+<body>
+
+    <div id="background">
+        <div class="container">
+            <div class="row mb">
+                <div class="column">
+                    <a href="https://abdobnymrwan.alwaysdata.net/site" class="logo">A</a>
+                    <h1 class="header">Abdobnymrwan</h1>
+                    <h2>Web Coding Channel</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="one-half column">
+                    <div class="links-list">
+                        <h1>التطبيقات</h1>
+                        <ul>
+                            <li><a href="./code editor/">Code Editor</a></li>
+                            <li><a href="./xo/">XO</a></li>
+                            <li><a href="./alarm/">Alarm</a></li>
+                            <li><a href="./text to speech/">Text to Speech</a></li>
+                            <li><a href="./translator/">Translator</a></li>
+                            <li><a href="./multi step/">Multi Step</a></li>
+                            <li><a href="./qr code/">QR Code</a></li>
+                            <li><a href="./snake v3/">Snake</a></li>
+                            <li><a href="./snake v2/">snake v2</a></li>
+                            <li><a href="./clock/">Clock</a></li>
+                            <li><a href="./quran/">Quran</a></li>
+                            <li><a href="./weather/">Weather</a></li>
+                            <li><a href="./weather v2/">weather v2</a></li>
+                            <li><a href="./snake pong/">snake pong</a></li>
+                            <li><a href="./Gameboy Tetris Clone/">Gameboy Tetris Clone</a></li>
+                            <li><a href="./recipe guide/">recipe guide</a></li>
+                            <li><a href="./rich text/">rich text</a></li>
+                            <li><a href="./pong game/">pong game</a></li>
+                            <li><a href="./2048 game/">2048 game</a></li>
+                            <li><a href="./simon game/">simon game</a></li>
+                            <li><a href="./chess game/">chess game</a></li>
+                            <li><a href="./food recipe/">food recipe</a></li>
+                            <li><a href="./code editor/">Code Editor</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+        <div class="container">
+            <div class="footer">
+                <p>
+                    Developed By
+                    <a href="https://www.facebook.com/abdo.amirouche2307">Abdobnymrwan</a> Facebook page.
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+particlesJS("background", {
+
+    particles: {
+        number: {
+            value: 15, // Number of Particles (count)
+            density: {
+                enable: true,
+                value_area: 300, // Area where particles will be distributed
+            },
+        },
+
+        color: {
+            value: "#ffffff", // Particles color
+        },
+        shape: {
+            type: "triangle", // Shape type
+        },
+        opacity: {
+            value: 0.8, // Base opacity of particles
+            random: true,
+            anum: {
+                enable: true,
+                speed: 1,
+                opacity_min: 0.1,
+                sync: false,
+            },
+        },
+        size: {
+            value: 5, // Base size of particles
+            random: true,
+            anim: {
+                enable: true,
+                speed: 4,
+                size_min: 0.3,
+                sync: false,
+            },
+        },
+
+        // Connecting lines
+        line_linked: {
+            enable: true,
+            distance: 150, // Maximum distance between linked particles
+            color: "#ffffff",
+            opacity: 0.4,
+            width: 1,
+        },
+
+        // Particle movement
+        move: {
+            enable: true,
+            speed: 2,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "bounce", // Behavior when particles move out of the canvas
+            bounce: false,
+        },
+    },
+    // Interactivity settings
+    interactivity: {
+        detect_on: "canvas",
+        events: {
+            onhover: {
+                enable: true, // Enable hover interactivity
+                mode: "repulse",
+            },
+            onclick: {
+                enable: true, // Enable for click
+                mode: "push", // Push particles on click
+            },
+            resize: true, // Resize particles animation on window resize
+        },
+    },
+
+    // Detect retina displays
+    retina_detect: true,
+
+});
+</script>
+</body>
+
+</html>
