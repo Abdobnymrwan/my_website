@@ -1,55 +1,52 @@
-const translations = {
-    en: {
-        title: "Abdobnymrwan",
-        subtitle: "Web Coding Channel",
-        appsTitle: "Applications",
-        facebookText: "Developed By",
-        apps: {
-            codeEditor: "Code Editor",
-            xo: "XO Game",
-            alarm: "Alarm",
-            quran: "Quran",
-            weather: "Weather",
-        }
+particlesJS("background", {
+    particles: {
+        number: {
+            value: 10,
+            density: { enable: true, value_area: 300 }
+        },
+        color: { value: "#ffffff" },
+        shape: { type: "triangle" },
+        opacity: {
+            value: 0.7, random: true,
+            anim: { enable: true, speed: 1, opacity_min: 0.1, sync: false }
+        },
+        size: {
+            value: 4, random: true,
+            anim: { enable: true, speed: 3, size_min: 0.3, sync: false }
+        },
+        line_linked: { enable: true, distance: 150, color: "#ffffff", opacity: 0.4, width: 1 },
+        move: { enable: true, speed: 1.5, direction: "none", out_mode: "bounce" }
     },
-    ar: {
-        title: "عبدالبن عمران",
-        subtitle: "قناة برمجيات الويب",
-        appsTitle: "التطبيقات",
-        facebookText: "تم التطوير بواسطة",
-        apps: {
-            codeEditor: "محرر الأكواد",
-            xo: "لعبة XO",
-            alarm: "المنبه",
-            quran: "القرآن الكريم",
-            weather: "الطقس",
-        }
-    }
-};
+    interactivity: {
+        detect_on: "canvas",
+        events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" }, resize: true }
+    },
+    retina_detect: true
+});
 
 function changeLanguage(lang) {
-    document.getElementById("title").textContent = translations[lang].title;
-    document.getElementById("subtitle").textContent = translations[lang].subtitle;
-    document.getElementById("appsTitle").textContent = translations[lang].appsTitle;
-    document.getElementById("facebookText").textContent = translations[lang].facebookText;
+    const titles = {
+        "en": "Applications",
+        "ar": "التطبيقات"
+    };
+    
+    const apps = {
+        "en": [
+            "Code Editor", "XO", "Alarm", "Text to Speech", "Translator",
+            "Multi Step", "QR Code", "Snake", "Clock", "Quran",
+            "Weather", "Pong Game"
+        ],
+        "ar": [
+            "محرر الأكواد", "إكس أو", "منبه", "تحويل النص إلى صوت", "مترجم",
+            "خطوات متعددة", "كود QR", "لعبة الثعبان", "ساعة", "القرآن",
+            "الطقس", "لعبة بونغ"
+        ]
+    };
 
-    // تحديث قائمة التطبيقات
-    const appLinks = document.querySelectorAll("#appsList a");
-    appLinks.forEach(link => {
-        const key = link.getAttribute("data-key");
-        link.textContent = translations[lang].apps[key];
-    });
-
-    // ضبط اتجاه الصفحة
-    document.documentElement.setAttribute("lang", lang);
-    document.documentElement.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
-
-    // حفظ اللغة المختارة في التخزين المحلي
-    localStorage.setItem("language", lang);
+    document.getElementById("apps-title").textContent = titles[lang];
+    
+    const appsList = document.getElementById("apps-list").children;
+    for (let i = 0; i < appsList.length; i++) {
+        appsList[i].querySelector("a").textContent = `${apps[lang][i]} | ${apps["en"][i]}`;
+    }
 }
-
-// تحميل اللغة المحفوظة عند فتح الصفحة
-document.addEventListener("DOMContentLoaded", function () {
-    const savedLang = localStorage.getItem("language") || "en"; // الإنجليزية هي الافتراضية
-    changeLanguage(savedLang);
-});
