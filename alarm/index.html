@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ساعة رقمية - مؤقت - منبه</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="clock-container">
+        <h1 id="clock">00:00:00 AM</h1>
+        <div class="controls">
+            <h2>المؤقت</h2>
+            <input type="number" id="timer-input" placeholder="عدد الثواني">
+            <button onclick="startTimer()">ابدأ</button>
+            <p id="timer-display">00:00</p>
+        </div>
+        <div class="controls">
+            <h2>المنبه</h2>
+            <input type="time" id="alarm-time">
+            <button onclick="setAlarm()">ضبط المنبه</button>
+            <p id="alarm-status">لم يتم ضبط المنبه</p>
+        </div>
+    </div>
+    <audio id="alarm-sound" src="alarm.mp3"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
